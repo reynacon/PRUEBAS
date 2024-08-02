@@ -39,7 +39,7 @@ if st.button('Construir histograma de precios', key='hist_price'):
 #Tercer Histograma: cantidad de vehiculos por tipo y fabricante
 st.header('cantidad de vehiculos por tipo y fabricante')
 # Crear el gráfico de barras apiladas
-fig = px.bar(car_data, x="model", y="price", color="type",
+fig = px.scatter(car_data, x="model", y="price", color="type",
              barmode='stack',
              title="Cantidad de vehículos por tipo y fabricante")
 
