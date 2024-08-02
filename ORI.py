@@ -35,6 +35,16 @@ if st.button('Construir histograma de precios', key='hist_price'):
                       barmode='overlay',
                       histnorm='percent' if normalize else None,
                       title="Distribución de Precios por Fabricante")
+
+#Tercer Histograma: cantidad de vehiculos por tipo y fabricante
+st.header('cantidad de vehiculos por tipo y fabricante')
+# Crear el gráfico de barras apiladas
+fig = px.bar(car_data, x="model", y="price", color="type",
+             barmode='stack',
+             title="Cantidad de vehículos por tipo y fabricante")
+
+# Mostrar el gráfico
+st.plotly_chart(fig, use_container_width=True)
     
-    # Mostrar el gráfico
-    st.plotly_chart(fig, use_container_width=True)
+# Mostrar el gráfico
+st.plotly_chart(fig, use_container_width=True)
